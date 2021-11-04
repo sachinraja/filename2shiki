@@ -1,0 +1,4 @@
+dist
+pnpm-lock.yaml
+src/languages.ts
+scripts/grammar.yaml

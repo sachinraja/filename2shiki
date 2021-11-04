@@ -1,0 +1,73 @@
+{
+  "name": "filename2shiki",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "filename to Shiki language",
+  "main": "dist/index.cjs",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "default": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "pnpm clean && pnpm build-grammar && tsup src/index.ts --format esm --dts",
+    "build-grammar": "node --loader ts-node/esm scripts/build.ts",
+    "clean": "rimraf dist",
+    "format": "prettier -w .",
+    "lint": "run-p lint:*",
+    "lint:format": "prettier -c .",
+    "lint:types": "tsc",
+    "lint:xo": "xo",
+    "prepare": "husky install",
+    "prepublishOnly": "pnpm build",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "devDependencies": {
+    "@swc/core": "1.2.106",
+    "@swc/jest": "0.2.5",
+    "@types/jest": "27.0.2",
+    "@types/js-yaml": "4.0.4",
+    "@types/node": "16.11.6",
+    "eslint-config-prettier": "8.3.0",
+    "husky": "7.0.4",
+    "jest": "27.3.1",
+    "js-yaml": "4.1.0",
+    "lint-staged": "11.2.6",
+    "npm-run-all": "4.1.5",
+    "param-case": "3.0.4",
+    "prettier": "2.4.1",
+    "prettier-plugin-pkg": "0.10.0",
+    "regenerator-runtime": "0.13.9",
+    "rimraf": "3.0.2",
+    "shiki": "0.9.12",
+    "ts-node": "10.4.0",
+    "tsup": "5.6.0",
+    "typescript": "4.4.4",
+    "xo": "0.46.4"
+  },
+  "sideEffects": false,
+  "lint-staged": {
+    "*.{js,ts,md,json,yaml}": "prettier -w"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "plugins": [
+      "./node_modules/prettier-plugin-pkg"
+    ]
+  },
+  "xo": {
+    "extends": [
+      "prettier"
+    ],
+    "ignores": [
+      "src/language.ts"
+    ]
+  }
+}
