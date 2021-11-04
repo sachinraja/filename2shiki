@@ -34,6 +34,11 @@ test('a/b/c/test.yml.mysql gets mysql, yaml for findAll', () => {
   ])
 })
 
+test('src/main.rs gets rust, xml for findAll, prioritizing rust for findOne', () => {
+  expect(findOne(sortedLanguages, 'src/main.rs')).toBe('rust')
+  expect(findAll(sortedLanguages, 'src/main.rs')).toEqual(['rust', 'xml'])
+})
+
 test('this/is/a/directory/with/a/nonexistent.ext gets undefined', () => {
   expect(
     findOne(sortedLanguages, 'this/is/a/directory/with/a/nonexistent.ext')
