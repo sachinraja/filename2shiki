@@ -17,11 +17,9 @@ import { getSortedLanguages, findOne } from 'filename2shiki'
 
 const sortedLanguages = getSortedLanguages()
 
-const filename = 'src/main.rs'
-
 // use fineOne to get one language
-const language = findOne(sortedLanguages, filename) // 'rust'
+const language = findOne(sortedLanguages, 'src/main.rs') // 'rust'
 
 // use findAll to get all languages
-const languages = findAll(sortedLanguages, 'src/index.js') // ['rust', 'xml']
+const languages = findAll(sortedLanguages, 'src/main.rs') // ['rust', 'xml']
 ```
