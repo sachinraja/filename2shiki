@@ -3,12 +3,10 @@
   "version": "1.0.0",
   "type": "module",
   "description": "filename to Shiki language",
-  "main": "dist/index.cjs",
+  "main": "dist/index.js",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "default": "./dist/index.cjs",
-      "types": "./dist/index.d.ts"
+      "default": "./dist/index.js"
     }
   },
   "types": "dist/index.d.ts",
