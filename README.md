@@ -13,13 +13,13 @@ npm install filename2shiki
 ## Usage
 
 ```js
-import { getSortedLanguages, findOne } from 'filename2shiki'
+import * as filename2shiki from 'filename2shiki'
 
-const sortedLanguages = getSortedLanguages()
+const sortedLanguages = filename2shiki.getSortedLanguages()
 
 // use fineOne to get one language
-const language = findOne(sortedLanguages, 'src/main.rs') // 'rust'
+const language = filename2shiki.findOne(sortedLanguages, 'src/main.rs') // 'rust'
 
 // use findAll to get all languages
-const languages = findAll(sortedLanguages, 'src/main.rs') // ['rust', 'xml']
+const languages = filename2shiki.findAll(sortedLanguages, 'src/main.rs') // ['rust', 'xml']
 ```
