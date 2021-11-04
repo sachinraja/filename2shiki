@@ -77,7 +77,7 @@ const build = () => {
 
   fs.writeFileSync(
     path.join(__dirname, '..', 'src', 'languages.ts'),
-    `import { Lang } from 'shiki'\nimport { SortedLanguages } from './types'\nexport const sortedLanguages = ${JSON.stringify(
+    `import { SortedLanguages } from './types'\nexport const sortedLanguages = ${JSON.stringify(
       sortedLanguages
     )} as SortedLanguages`,
     'utf8'
