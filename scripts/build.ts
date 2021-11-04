@@ -14,7 +14,7 @@ type ExtraGrammarData = GrammarData & {
 type Grammars = Record<string, ExtraGrammarData>
 
 const build = () => {
-  const grammarFilepath = path.join(__dirname, 'grammar.yaml')
+  const grammarFilepath = path.join(__dirname, 'linguist-languages.yaml')
 
   const grammarData = Object.entries(
     yaml.load(fs.readFileSync(grammarFilepath, 'utf8')) as Grammars

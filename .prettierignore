@@ -1,4 +1,4 @@
 dist
 pnpm-lock.yaml
 src/languages.ts
-scripts/grammar.yaml
+scripts/linguist-languages.yaml
