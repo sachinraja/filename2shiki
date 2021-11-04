@@ -3,6 +3,16 @@
   "version": "1.0.0",
   "type": "module",
   "description": "filename to Shiki language",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sachinraja/filename2shiki.git"
+  },
+  "homepage": "https://github.com/sachinraja/filename2shiki#readme",
+  "bugs": {
+    "url": "https://github.com/sachinraja/filename2shiki/issues"
+  },
+  "author": "Sachin Raja <sachinraja2349@gmail.com>",
+  "license": "MIT",
   "main": "dist/index.js",
   "exports": {
     ".": {
@@ -12,6 +22,9 @@
   "types": "dist/index.d.ts",
   "files": [
     "dist"
+  ],
+  "keywords": [
+    "shiki"
   ],
   "scripts": {
     "build": "pnpm clean && pnpm build-grammar && tsup src/index.ts --format esm --dts",
