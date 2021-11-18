@@ -42,7 +42,7 @@
   "devDependencies": {
     "@swc/core": "1.2.110",
     "@swc/jest": "0.2.5",
-    "@types/jest": "27.0.2",
+    "@types/jest": "27.0.3",
     "@types/js-yaml": "4.0.4",
     "@types/node": "16.11.7",
     "eslint-config-prettier": "8.3.0",
