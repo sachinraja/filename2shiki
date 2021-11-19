@@ -4,7 +4,7 @@ specifiers:
   '@swc/core': 1.2.111
   '@swc/jest': 0.2.5
   '@types/jest': 27.0.3
-  '@types/js-yaml': 4.0.4
+  '@types/js-yaml': 4.0.5
   '@types/node': 16.11.9
   eslint-config-prettier: 8.3.0
   husky: 7.0.4
@@ -27,7 +27,7 @@ devDependencies:
   '@swc/core': 1.2.111
   '@swc/jest': 0.2.5_@swc+core@1.2.111
   '@types/jest': 27.0.3
-  '@types/js-yaml': 4.0.4
+  '@types/js-yaml': 4.0.5
   '@types/node': 16.11.9
   eslint-config-prettier: 8.3.0
   husky: 7.0.4
@@ -923,8 +923,8 @@ packages:
       pretty-format: 27.3.1
     dev: true
 
-  /@types/js-yaml/4.0.4:
-    resolution: {integrity: sha512-AuHubXUmg0AzkXH0Mx6sIxeY/1C110mm/EkE/gB1sTRz3h2dao2W/63q42SlVST+lICxz5Oki2hzYA6+KnnieQ==}
+  /@types/js-yaml/4.0.5:
+    resolution: {integrity: sha512-FhpRzf927MNQdRZP0J5DLIdTXhjLYzeUTmLAu69mnVksLH9CJY3IuSeEgbKUki7GQZm0WqDkGzyxju2EZGD2wA==}
     dev: true
 
   /@types/json-schema/7.0.9:
