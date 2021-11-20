@@ -19,7 +19,7 @@ specifiers:
   rimraf: 3.0.2
   shiki: 0.9.12
   ts-node: 10.4.0
-  tsup: 5.7.2
+  tsup: 5.7.3
   typescript: 4.4.4
   xo: 0.46.4
 
@@ -42,7 +42,7 @@ devDependencies:
   rimraf: 3.0.2
   shiki: 0.9.12
   ts-node: 10.4.0_d50ceeb66b2137d3e0a0cdc0dc4ed4a7
-  tsup: 5.7.2_ts-node@10.4.0+typescript@4.4.4
+  tsup: 5.7.3_ts-node@10.4.0+typescript@4.4.4
   typescript: 4.4.4
   xo: 0.46.4
 
@@ -4709,8 +4709,8 @@ packages:
       glob: 7.2.0
     dev: true
 
-  /rollup/2.58.0:
-    resolution: {integrity: sha512-NOXpusKnaRpbS7ZVSzcEXqxcLDOagN6iFS8p45RkoiMqPHDLwJm758UF05KlMoCRbLBTZsPOIa887gZJ1AiXvw==}
+  /rollup/2.60.0:
+    resolution: {integrity: sha512-cHdv9GWd58v58rdseC8e8XIaPUo8a9cgZpnCMMDGZFDZKEODOiPPEQFXLriWr/TjXzhPPmG5bkAztPsOARIcGQ==}
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
@@ -5198,8 +5198,8 @@ packages:
     resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==}
     dev: true
 
-  /tsup/5.7.2_ts-node@10.4.0+typescript@4.4.4:
-    resolution: {integrity: sha512-YxryYjhB54h8YUNlN7Oze9PnqcuN++vwrFW6qtjC1ve9eQPvzCJw0rN0WPOuEQXburwo+gtDid9C4eQZ6x/Yog==}
+  /tsup/5.7.3_ts-node@10.4.0+typescript@4.4.4:
+    resolution: {integrity: sha512-vdcxyJ/yEOp0CM2GH1toh6n6Tc0QAShHar2FwOMszJgsRWwc9BnI92XwMB52Fz9Y/W5JRFFgtVs+gR+VTOFLtA==}
     hasBin: true
     peerDependencies:
       typescript: ^4.2.3
@@ -5217,7 +5217,7 @@ packages:
       joycon: 3.0.1
       postcss-load-config: 3.1.0_ts-node@10.4.0
       resolve-from: 5.0.0
-      rollup: 2.58.0
+      rollup: 2.60.0
       sucrase: 3.20.2
       tree-kill: 1.2.2
       typescript: 4.4.4
