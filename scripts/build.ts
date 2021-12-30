@@ -1,8 +1,8 @@
-import { fileURLToPath } from 'node:url'
-import path from 'node:path'
-import fs from 'node:fs'
-import { BUNDLED_LANGUAGES, Lang } from 'shiki'
 import yaml from 'js-yaml'
+import fs from 'node:fs'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+import { BUNDLED_LANGUAGES, Lang } from 'shiki'
 import { GrammarData, LanguageType, SortedLanguages } from '../src/types'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -27,7 +27,7 @@ const getSortedLanguages = (languageMap: Record<Lang, GrammarData>) => {
 
   for (const [languageId, language] of languages) {
     const foundPriority = priorities.find(
-      (priority) => priority === language.type
+      (priority) => priority === language.type,
     )!
 
     sortedLanguages[foundPriority].push([
@@ -46,7 +46,7 @@ const build = () => {
   const grammarFilepath = path.join(__dirname, 'linguist-languages.yaml')
 
   const grammarData = Object.entries(
-    yaml.load(fs.readFileSync(grammarFilepath, 'utf8')) as Grammars
+    yaml.load(fs.readFileSync(grammarFilepath, 'utf8')) as Grammars,
   )
 
   // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
@@ -77,10 +77,12 @@ const build = () => {
 
   fs.writeFileSync(
     path.join(__dirname, '..', 'src', 'languages.ts'),
-    `import { SortedLanguages } from './types'\nexport const sortedLanguages = ${JSON.stringify(
-      sortedLanguages
-    )} as SortedLanguages`,
-    'utf8'
+    `import { SortedLanguages } from './types'\nexport const sortedLanguages = ${
+      JSON.stringify(
+        sortedLanguages,
+      )
+    } as SortedLanguages`,
+    'utf8',
   )
 }
 

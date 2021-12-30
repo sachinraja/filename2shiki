@@ -4,10 +4,11 @@ import { ExtensionsAndFilenames } from './types'
 
 const doesLanguageMatchesFilename = (
   language: ExtensionsAndFilenames,
-  filename: string
+  filename: string,
 ) => {
-  if (language.extensions?.find((extension) => filename.endsWith(extension)))
+  if (language.extensions?.find((extension) => filename.endsWith(extension))) {
     return true
+  }
 
   if (language.filenames?.includes(filename)) return true
 
@@ -20,9 +21,7 @@ const doesLanguageMatchesFilename = (
  */
 export const findOne = (filename: string) => {
   for (const languages of Object.values(sortedLanguages)) {
-    const foundLanguage = languages.find(([, language]) =>
-      doesLanguageMatchesFilename(language, filename)
-    )
+    const foundLanguage = languages.find(([, language]) => doesLanguageMatchesFilename(language, filename))
 
     if (foundLanguage) return foundLanguage[0]
   }
@@ -36,9 +35,7 @@ export const findAll = (filename: string) => {
   const allFoundLanguages: Lang[] = []
 
   for (const languages of Object.values(sortedLanguages)) {
-    const foundLanguages = languages.filter(([, language]) =>
-      doesLanguageMatchesFilename(language, filename)
-    )
+    const foundLanguages = languages.filter(([, language]) => doesLanguageMatchesFilename(language, filename))
 
     allFoundLanguages.push(...foundLanguages.map(([languageId]) => languageId))
   }

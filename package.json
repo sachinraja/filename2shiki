@@ -27,58 +27,52 @@
     "shiki"
   ],
   "scripts": {
-    "build": "pnpm clean && pnpm build-grammar && tsup src/index.ts --format esm --dts",
+    "build": "pnpm build-grammar && tsup",
     "build-grammar": "node --loader ts-node/esm scripts/build.ts",
-    "clean": "rimraf dist",
-    "format": "prettier -w .",
+    "format": "dprint fmt",
     "lint": "run-p lint:*",
-    "lint:format": "prettier -c .",
+    "lint:format": "dprint check",
     "lint:types": "tsc",
-    "lint:xo": "xo",
+    "lint:js": "eslint .",
     "prepare": "husky install",
     "prepublishOnly": "pnpm build",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    "test": "vitest"
   },
   "devDependencies": {
-    "@swc/core": "1.2.111",
-    "@swc/jest": "0.2.5",
-    "@types/jest": "27.0.3",
     "@types/js-yaml": "4.0.5",
-    "@types/node": "16.11.9",
+    "@types/node": "17.0.5",
+    "@typescript-eslint/eslint-plugin": "5.8.1",
+    "@typescript-eslint/parser": "5.8.1",
+    "dprint": "0.19.2",
+    "eslint": "8.5.0",
     "eslint-config-prettier": "8.3.0",
     "husky": "7.0.4",
-    "jest": "27.3.1",
     "js-yaml": "4.1.0",
-    "lint-staged": "11.2.6",
+    "nano-staged": "0.5.0",
     "npm-run-all": "4.1.5",
     "param-case": "3.0.4",
-    "prettier": "2.4.1",
-    "prettier-plugin-pkg": "0.11.0",
-    "regenerator-runtime": "0.13.9",
-    "rimraf": "3.0.2",
-    "shiki": "0.9.12",
+    "shiki": "0.10.0",
     "ts-node": "10.4.0",
-    "tsup": "5.8.0",
-    "typescript": "4.4.4",
-    "xo": "0.46.4"
+    "tsup": "5.11.9",
+    "typescript": "4.5.4",
+    "vite": "2.7.10",
+    "vitest": "0.0.124"
   },
   "sideEffects": false,
-  "lint-staged": {
-    "*.{js,ts,md,json,yaml}": "prettier -w"
+  "nano-staged": {
+    "*.{js,ts,md,json,yaml}": "dprint fmt"
   },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "plugins": [
-      "./node_modules/prettier-plugin-pkg"
-    ]
-  },
-  "xo": {
-    "extends": [
-      "prettier"
+  "tsup": {
+    "entry": [
+      "src/index.ts"
     ],
-    "ignores": [
-      "src/language.ts"
-    ]
+    "format": [
+      "esm"
+    ],
+    "dts": {
+      "resolve": true
+    },
+    "splitting": true,
+    "clean": true
   }
 }

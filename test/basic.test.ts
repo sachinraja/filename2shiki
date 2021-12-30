@@ -1,4 +1,5 @@
 import path from 'node:path'
+import { expect, test } from 'vitest'
 import { findAll, findOne } from '../src'
 
 test('index.ts gets typescript', () => {
